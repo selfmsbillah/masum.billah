@@ -1242,3 +1242,64 @@ footer {
     display: none !important;
   }
 }
+
+/* ******************************************************************************** */
+/* Small right-side sliding mobile menu */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 76px;
+    right: 0;
+    z-index: 3100;
+
+    width: 185px;
+    height: auto;
+    min-height: 0;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0 0 0 12px;
+    background: #101722;
+    box-shadow: -12px 15px 30px rgba(0, 0, 0, 0.35);
+
+    /* শুরুতে ডান পাশে লুকানো থাকবে */
+    opacity: 1;
+    visibility: visible;
+    pointer-events: none;
+    transform: translateX(110%);
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Hamburger চাপলে ডান দিক থেকে slide করে আসবে */
+  .nav-links.mobile-menu-open {
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    width: 100%;
+    display: block;
+    padding: 10px 12px;
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:active {
+    background: rgba(255, 71, 87, 0.14);
+    color: #ff4757;
+  }
+
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
