@@ -1424,3 +1424,11 @@ footer {
     color: #ff4757 !important;
   }
 }
+
+/* ********************************************************************************** */
+html,
+body {
+  background: #070b13;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+}
