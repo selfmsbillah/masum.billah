@@ -79,5 +79,36 @@
   <footer class="page-footer">
     <p>&copy; 2026 Masum Billah. All Rights Reserved.</p>
   </footer>
+  <script>
+  const menuButton = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove("mobile-menu-open");
+  }
+
+  menuButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    mobileMenu.classList.toggle("mobile-menu-open");
+  });
+
+  mobileMenu.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+
+  document.addEventListener("click", closeMobileMenu);
+
+  window.addEventListener("scroll", closeMobileMenu, {
+    passive: true
+  });
+
+  window.addEventListener("touchmove", closeMobileMenu, {
+    passive: true
+  });
+
+  document.querySelectorAll("#mobile-menu a").forEach(function (link) {
+    link.addEventListener("click", closeMobileMenu);
+  });
+</script>
 </body>
 </html>
