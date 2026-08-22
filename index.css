@@ -1554,4 +1554,15 @@ body {
   }
 }
 
+/****************************  */
+@media (max-width: 768px) {
+  .nav-container {
+    min-height: 64px !important;
+    padding: 10px 18px !important;
+  }
+
+  .hero-section {
+    margin-top: 64px !important;
+  }
+}
 
