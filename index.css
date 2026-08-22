@@ -1169,3 +1169,76 @@ footer {
     margin-top: 76px;
   }
 }
+
+
+
+
+
+
+
+/* *********************************************** */
+/* Mobile hamburger popup menu fix */
+@media (max-width: 768px) {
+  .navbar {
+    z-index: 3000;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 68px;
+    right: 14px;
+    z-index: 3100;
+    width: 210px;
+    height: auto;
+    min-height: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: #101722;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+
+    /* শুরুতে hidden */
+    right: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: 0.25s ease;
+  }
+
+  .nav-links.mobile-menu-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 11px 13px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:active {
+    background: rgba(255, 71, 87, 0.15);
+    color: #ff4757;
+  }
+
+  /* Popup ছোট, তাই full-screen overlay দরকার নেই */
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
