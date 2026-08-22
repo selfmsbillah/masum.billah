@@ -217,7 +217,7 @@
     <p>&copy; 2026 Masum Billah. All Rights Reserved.</p>
   </footer>
 
- <script>
+<script>
   const menuButton = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
 
@@ -234,8 +234,16 @@
     event.stopPropagation();
   });
 
-  document.addEventListener("click", function () {
-    closeMobileMenu();
+  /* Body-র যেকোনো জায়গায় click করলে বন্ধ হবে */
+  document.addEventListener("click", closeMobileMenu);
+
+  /* Scroll করলে smooth slide দিয়ে বন্ধ হবে */
+  window.addEventListener("scroll", closeMobileMenu, {
+    passive: true
+  });
+
+  window.addEventListener("touchmove", closeMobileMenu, {
+    passive: true
   });
 
   document.querySelectorAll("#mobile-menu a").forEach(function (link) {
