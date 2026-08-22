@@ -1303,3 +1303,69 @@ footer {
     display: none !important;
   }
 }
+
+
+/* ******************************************************************* */
+/* Final small mobile slide menu */
+@media (max-width: 768px) {
+  .navbar {
+    z-index: 5000;
+  }
+
+  .nav-links {
+    position: fixed !important;
+    top: 76px !important;
+    right: -180px !important;
+    z-index: 5100 !important;
+
+    width: 170px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 7px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 3px !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0 0 0 12px;
+    background: #101722;
+    box-shadow: -10px 14px 28px rgba(0, 0, 0, 0.38);
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: none;
+    transform: none !important;
+    transition: right 0.35s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  }
+
+  .nav-links.mobile-menu-open {
+    right: 0 !important;
+    pointer-events: auto;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 9px 10px !important;
+    border-radius: 7px;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 600;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:active {
+    background: rgba(255, 71, 87, 0.14);
+    color: #ff4757 !important;
+  }
+
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
